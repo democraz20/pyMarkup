@@ -1,0 +1,9 @@
+this is the header text
+
+Fore.GREEN=>and this is some fore greentext
+
+Example of multicolored line text : [noEnd]
+Fore.YELLOW=>hello there
+
+Fore.YELLOW=>Back + Fore in same line [noEnd]
+is coming
