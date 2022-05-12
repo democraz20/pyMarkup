@@ -11,10 +11,17 @@ def plainText(text):
 
 def colorT(text):
     getColor = text.split("=>")
-    if len(getColor) != 1:
-        color = getColor[0].split(".")
-        res = [color[0], color[1]]
-        return res
+    if len(getColor) == 2:
+        eachColor = getColor[0].split(",")
+        if len(eachColor) == 2:
+            res = []
+            res.append(eachColor[0].split("."))
+            res.append(eachColor[1].split("."))
+            return res
+        elif len(eachColor) == 1:
+            res = []
+            res.append(eachColor[0].split("."))
+            return res
     elif len(getColor) == 1:
         return ["noColor"]
 

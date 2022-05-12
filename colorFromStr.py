@@ -26,7 +26,6 @@ backdict = {
 }
 
 def colorFromStr(text):
-    text = text.split('.')
     if text[0] == "Fore":
         return foredict[text[1]]
     elif text[0] == "Back":
