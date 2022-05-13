@@ -1,18 +1,20 @@
 import colorama
+import pyfiglet
 from colorama import Fore, Back, Style
 
-from colorFromStr import colorFromStr
+from colorFromStr import colorStr
 
 from getMod import *
+from utils import checkEnd
 
-
+    
 colorama.init(autoreset=True)
 #text = open("main.txt", "r")
 #text = text.read()
 
 #Fore.GREEN,Back.RED=>
 
-text = """this is the header text
+text = """# Fore.GREEN=>this is the header text with colors
 
 Fore.BLACK,Back.WHITE=>this is a line of text with 2 effects [noEnd]
  (both background and foreground)
@@ -30,31 +32,35 @@ for x in text.split("\n"):
     onlyText = plainText(x)
     color = colorT(x)
     end = endT(x)
+    header = isHeader(x)
 
 
     #has colors
     if color[0][0] == "Fore" or color[0][0] == "Back":
         #has 2 colors
         if len(color) == 2:
-            for i in onlyText:
-                print(colorFromStr(color[0])+colorFromStr(color[1])+i+" ", end="")
+            if header:
+                sum = " ".join(onlyText)
+                sum = colorStr(color[0]) + colorStr(color[1]) + pyfiglet.figlet_format(sum)
+                print(sum, end="")
+            else:
+                sum = colorStr(color[0]) + colorStr(color[1]) + " ".join(onlyText)
+                print(sum, end="")
         elif len(color) == 1:
-            for i in onlyText:
-                print(colorFromStr(color[0])+i+" ", end="")
-
-
-
-        if end == True:
-            print()
-        elif end == False:
-            print(end="")
-
+            if header:
+                sum = " ".join(onlyText)
+                sum = colorStr(color[0]) + pyfiglet.figlet_format(sum)
+                print(sum, end="")
+            else:
+                sum = colorStr(color[0]) + " ".join(onlyText)
+                print(sum, end="")
+        checkEnd(x)
     elif color[0] == "noColor":
-        for i in onlyText:
-            print(i+" ", end="")
-        if end == True:
-            print()
-        elif end == False:
-            print(end="")
+        if header:
+            sum = pyfiglet.figlet_format(" ".join(onlyText))
+            print(sum, end="")
+        else:
+            print(" ".join(onlyText), end="")
+        checkEnd(x)
 
             

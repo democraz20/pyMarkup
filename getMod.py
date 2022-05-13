@@ -11,6 +11,11 @@ def plainText(text):
 
 def colorT(text):
     getColor = text.split("=>")
+    if isHeader(getColor[0]):
+        holder = getColor[0].replace("# ", "")
+        getColor[0] = holder
+        
+    #if there's atleast one color specified
     if len(getColor) == 2:
         eachColor = getColor[0].split(",")
         if len(eachColor) == 2:
@@ -31,3 +36,10 @@ def endT(text):
         return False
     elif getEnd[-1] != "[noEnd]":
         return True
+
+def isHeader(text):
+    firstSpaces = text.split(" ")
+    if firstSpaces[0] == "#":
+        return True
+    else:
+        return False

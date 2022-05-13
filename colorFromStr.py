@@ -25,7 +25,7 @@ backdict = {
     "RESET": Back.RESET
 }
 
-def colorFromStr(text):
+def colorStr(text):
     if text[0] == "Fore":
         return foredict[text[1]]
     elif text[0] == "Back":
