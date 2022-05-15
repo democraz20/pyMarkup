@@ -9,3 +9,4 @@ https://github.com/democraz20/taskmd
 - [ ] put everything into a single file
 - [ ] rename headers to h1 and h2
 - [ ] make a smaller header
+- [x] added images
