@@ -14,16 +14,15 @@ colorama.init(autoreset=True)
 
 #Fore.GREEN,Back.RED=>
 
-text = """# Fore.CYAN=>this is the header text with colors
-
-Fore.BLACK,Back.WHITE=>this is a line of text with 2 effects [noEnd]
+text = """# Fore.CYAN>this is the header text with colors
+Fore.BLACK,Back.WHITE>this is a line of text with 2 effects [noEnd]
  (both background and foreground)
-Fore.GREEN=>and this is some fore greentext
+Fore.GREEN>and this is some fore greentext
 
 Example of multicolored line text : [noEnd]
-Fore.YELLOW=>hello there
+Fore.YELLOW>hello there
 
-Fore.RED=>Back + Fore in same line [noEnd]
+Fore.RED>Back + Fore in same line [noEnd]
  is here"""
 #print(text.split("\n"))
 #print(f"{text}")

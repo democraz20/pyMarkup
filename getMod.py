@@ -1,5 +1,5 @@
 def plainText(text):
-    getColor = text.split("=>")
+    getColor = text.split(">")
     if len(getColor) != 1:
         getEnd = getColor[1].split(" ")
     else:
@@ -10,7 +10,7 @@ def plainText(text):
     return getEnd
 
 def colorT(text):
-    getColor = text.split("=>")
+    getColor = text.split(">")
     if isHeader(getColor[0]):
         holder = getColor[0].replace("# ", "")
         getColor[0] = holder
