@@ -7,6 +7,7 @@ python markup file with colorama
 ## current syntax 
 - "#" for biggest header
 - colorama colors, to use 2 add a "," in between. colorama Syntax has to be correct
+- syntax for colors are ">"
 - "[noEnd]" add at end of line to specify that line printing without creating a new line
 
 ## rules 
