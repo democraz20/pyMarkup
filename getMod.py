@@ -2,13 +2,14 @@ from utils import log
 
 def plainText(text):
     getColor = text.split(">")
+    # if there's a noend, remove it from the plain text
     if len(getColor) != 1:
         getEnd = getColor[1].split(" ")
     else:
         getEnd = text.split(" ")
-    if getEnd[-1] == "<noEnd>":
+    if getEnd[-1] == "<noEnd":
         getEnd.pop(len(getEnd)-1)
-
+    #log(getEnd)
     return getEnd
 
 def colorT(text):
