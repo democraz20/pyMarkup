@@ -10,3 +10,4 @@ https://github.com/democraz20/taskmd
 - [ ] rename headers to h1 and h2
 - [ ] make a smaller header
 - [x] <> Syntax for noEnd
+- [x] consistent syntax
