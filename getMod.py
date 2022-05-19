@@ -21,6 +21,8 @@ def colorT(text):
         holder = getColor[0].replace("# ", "")
         getColor[0] = holder
         
+    holder = getColor[0].lstrip("<")
+    getColor[0] = holder
     #if there's atleast one color specified
     if len(getColor) == 2:
         eachColor = getColor[0].split(",")
