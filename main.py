@@ -19,6 +19,7 @@ text = """# <Fore.CYAN>this is the header text with colors
  (both background and foreground)
 <Fore.GREEN>and this is some fore greentext
 
+line with no modifiers
 Example of multicolored line text : <noEnd>
 <Fore.YELLOW>hello there
 
@@ -59,6 +60,7 @@ for x in text.split("\n"):
             sum = pyfiglet.figlet_format(" ".join(onlyText))
             print(sum, end="")
         else:
+            #log(onlyText)
             print(" ".join(onlyText), end="")
         checkEnd(x)
 

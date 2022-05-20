@@ -1,12 +1,16 @@
-from utils import log
+from utils import log, splitchar
 
 def plainText(text):
     getColor = text.split(">")
     # if there's a noend, remove it from the plain text
     if len(getColor) != 1:
-        getEnd = getColor[1].split(" ")
+        if not getColor[1]:
+            getEnd = getColor[0].split(" ")
+        else:
+            getEnd = getColor[1].split(" ")
     else:
         getEnd = text.split(" ")
+    #log(getEnd)
     if getEnd[-1] == "<noEnd":
         getEnd.pop(len(getEnd)-1)
     #log(getEnd)
@@ -22,9 +26,16 @@ def colorT(text):
         holder = getColor[0].replace("# ", "")
         getColor[0] = holder
         
+    #holder1 = splitchar(getColor[0])
+    #log(holder1[0])
+    #log(getColor)
+    if len(getColor) == 2:
+        if not getColor[1]:
+            return ["noColor"]
+
     holder = getColor[0].lstrip("<")
     getColor[0] = holder
-    #if there's atleast one color specified
+    #print(getColor)
     if len(getColor) == 2:
         eachColor = getColor[0].split(",")
         if len(eachColor) == 2:
@@ -36,6 +47,8 @@ def colorT(text):
             res = []
             res.append(eachColor[0].split("."))
             return res
+        #if getColor[1] == '':
+        #    log("test")
     elif len(getColor) == 1:
         return ["noColor"]
 

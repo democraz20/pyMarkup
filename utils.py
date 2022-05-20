@@ -11,3 +11,6 @@ def checkEnd(text):
 def log(text):
     print(Fore.YELLOW+"[LOG] : ", end="")
     print(text)
+    
+def splitchar(text):
+    return [char for char in text]
