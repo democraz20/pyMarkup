@@ -1,9 +1,9 @@
 <#><Fore.CYAN>This is the header text 
 
-<Fore.Black,Back.White>line with foreground and background 
+<Fore.BLACK,Back.WHITE>line with foreground and background 
 
 <Fore.YELLOW>line with multiple colors : <noEnd>
-<Fore.Red>hello there 
+<Fore.RED>hello there 
 
 line with : <noEnd>
 <Fore.BLUE>more colors 
