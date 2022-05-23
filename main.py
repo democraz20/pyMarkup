@@ -1,7 +1,9 @@
+from itertools import tee
+from re import T
 import colorama
 from colorama import Fore, Back, Style
 from getmod import *
-colorama.init()
+colorama.init(autoreset=True)
 
 # open a file and read it"""
 with open('text.txt') as f:
@@ -11,14 +13,21 @@ with open('text.txt') as f:
 for text in read:
     # print(getBoolEach('#', text))
     colors = getColor(text)
+    header = getBoolEach("#", text)
+    noEnd = getBoolEach("noEnd", text)
     # print(colors)
     if colors == None:
-        print(pureText(text))
+        sum = " ".join(pureText(text))
+        print(sum, end="")
     elif len(colors) == 2:
-        print(colorStr(colors[0]) + colorStr(colors[1]) + pureText(text))
+        sum = colorStr(colors[0]) + colorStr(colors[1]) + " ".join(pureText(text))
+        print(sum, end="")
     elif len(colors) == 1:
-        print(colorStr(colors[0]) + pureText(text))
-
-    print(Style.RESET_ALL, end="")
+        sum = colorStr(colors[0]) + " ".join(pureText(text))
+        print(sum, end="")
+    
+    checkEnd(text)
+    # print(Style.RESET_ALL, end="")
+    # checkEnd(text)
     # print(pureText(text))
     #print(pureText(text))

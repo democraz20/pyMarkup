@@ -8,4 +8,4 @@
 line with : <noEnd>
 <Fore.BLUE>more colors 
 
-line with no modifiers 
+line with no modifiers

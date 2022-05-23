@@ -1,6 +1,7 @@
 # from logging.config import IDENTIFIER
 import re
 from colorFromStr import colorStr
+from colorama import Style
 
 def getTags(text):
     return re.findall('<(.*?)>', text)
@@ -20,8 +21,9 @@ def pureText(text):
     if len(text) > 1:
         if text[-2].find(marker) != -1:
             text.pop(-2)
-    res = " ".join(text)
-    return res
+    text[-1] = text[-1].replace("\n", "")
+    #print(text)
+    return text
     #return re.findall('>(.*?)<', text)
 
 def getBoolEach(item, text):
@@ -30,6 +32,17 @@ def getBoolEach(item, text):
         if i == item:
             return True
     return False
+
+def checkEnd(text):
+    allTags = getTags(text)
+    # print(allTags)
+    if len(allTags) >= 1:
+        if allTags[-1] == "noEnd":
+            print(end="")
+        else: 
+            print()
+    else:
+        print()
 
 def getColor(text):
     allTags = getTags(text)
