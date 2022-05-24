@@ -5,6 +5,7 @@ from colorama import Style
 
 def getTags(text):
     return re.findall('<(.*?)>', text)
+    #regex
 
 #def getEverything(text):
     #return re.findall('<(.*?)>(.*?)<(.*?)>', text)
@@ -29,7 +30,7 @@ def pureText(text):
 def getBoolEach(item, text):
     allTags = getTags(text)
     for i in allTags:
-        if i == item:
+        if item in i:
             return True
     return False
 
@@ -51,3 +52,10 @@ def getColor(text):
             if "Fore" in i or "Back" in i:
                 i = i.split(",")
                 return i
+
+def getHeaderFont(text):
+    allTags = getTags(text)
+    if len(allTags) >= 1:
+        if "#" in allTags[0][0]:
+            # print(re.findall('"(.*?)"', allTags[0]))
+            return re.findall('"(.*?)"', allTags[0])[0]
