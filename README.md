@@ -14,6 +14,7 @@ python markup file with colorama
 - "<noEnd>" add at end of line to specify that line printing without creating a new line
 
 ## rules 
+- to use pyfiglet fonts for header, do "<#='font'>", if font is not found. displays red error message
 - incase of using colors in a header, the colors have to come after the # with a space in betweem
 - when using multiple colors, cannot have space between the 2 colors (around the ",")
 - when using <noEnd>, a space is needed infront of the syntax
