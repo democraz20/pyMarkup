@@ -1,4 +1,3 @@
-from itertools import tee
 from re import T
 import colorama
 from colorama import Fore, Back, Style
@@ -11,12 +10,16 @@ with open('text.txt', 'r') as f:
     read = f.readlines()
 #print(read)
 
+links = []
+
 for text in read:
     # print(getBoolEach('#', text))
     colors = getColor(text)
     header = getBoolEach("#", text)
     noEnd = getBoolEach("noEnd", text)
     figfont = getHeaderFont(text)
+    link = getLink(text)
+
     if not figfont:
         figfont = "standard"
     # print(colors)
@@ -26,6 +29,7 @@ for text in read:
             sum = pyfiglet.figlet_format(sum, font=figfont)
         except:
             print(f"{Fore.RED} Error : header font not found")
+
     if colors == None:
         sum = sum
         print(sum, end="")
@@ -35,6 +39,12 @@ for text in read:
     elif len(colors) == 1:
         sum = colorStr(colors[0]) + sum
         print(sum, end="")
+    
+    if not link:
+        pass
+    else:
+        links.append(link)
+        print(links)
     
     checkEnd(text)
     # print(Style.RESET_ALL, end="")

@@ -5,6 +5,8 @@
 <Fore.YELLOW>line with multiple colors : <noEnd>
 <Fore.RED>hello there 
 
+<link="https://www.github.com/democraz20/pymarkup">github page/repository
+
 line with : <noEnd>
 <Fore.BLUE>more colors 
 

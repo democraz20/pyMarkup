@@ -59,3 +59,10 @@ def getHeaderFont(text):
         if "#" in allTags[0][0]:
             # print(re.findall('"(.*?)"', allTags[0]))
             return re.findall('"(.*?)"', allTags[0])[0]
+
+def getLink(text):
+    allTags = getTags(text)
+    if len(allTags) >= 1:
+        if "link" in allTags[0]:
+            # print(re.findall('"(.*?)"', allTags[0]))
+            return re.findall('"(.*?)"', allTags[0])[0]
