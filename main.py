@@ -1,53 +1,10 @@
-from re import T
-import colorama
-from colorama import Fore, Back, Style
-from getmod import *
+import renderer
+from renderer import renderer
 import pyfiglet
-colorama.init(autoreset=True)
+#open file and read
+with open("text.txt", "r") as f:
+    text = f.readlines()
 
-# open a file and read it"""
-with open('text.txt', 'r') as f:
-    read = f.readlines()
-#print(read)
 
-links = []
-
-for text in read:
-    # print(getBoolEach('#', text))
-    colors = getColor(text)
-    header = getBoolEach("#", text)
-    noEnd = getBoolEach("noEnd", text)
-    figfont = getHeaderFont(text)
-    link = getLink(text)
-
-    if not figfont:
-        figfont = "standard"
-    # print(colors)
-    sum = " ".join(pureText(text))
-    if header:
-        try:
-            sum = pyfiglet.figlet_format(sum, font=figfont)
-        except:
-            print(f"{Fore.RED} Error : header font not found")
-
-    if colors == None:
-        sum = sum
-        print(sum, end="")
-    elif len(colors) == 2:
-        sum = colorStr(colors[0]) + colorStr(colors[1]) + sum
-        print(sum, end="")
-    elif len(colors) == 1:
-        sum = colorStr(colors[0]) + sum
-        print(sum, end="")
-    
-    if not link:
-        pass
-    else:
-        links.append(link)
-        print(links)
-    
-    checkEnd(text)
-    # print(Style.RESET_ALL, end="")
-    # checkEnd(text)
-    # print(pureText(text))
-    #print(pureText(text))
+print(pyfiglet.figlet_format("printing from renderer file"))
+renderer(text)
