@@ -7,7 +7,6 @@ https://github.com/democraz20/taskmd
 
 - [x] proper noEnds
 - [x] added header fonts
-- [ ] adding links to a list
-- [ ] put everything into a single file
-- [ ] rename headers to h1 and h2
-- [ ] make a smaller header
+- [x] adding links to a list
+- [x] put everything into a single file
+- [x] make a smaller header

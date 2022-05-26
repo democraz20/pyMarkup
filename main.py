@@ -5,6 +5,5 @@ import pyfiglet
 with open("text.txt", "r") as f:
     text = f.readlines()
 
-
 print(pyfiglet.figlet_format("printing from renderer file"))
 renderer(text)
