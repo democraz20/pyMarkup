@@ -4,9 +4,8 @@ import re
 import pyfiglet
 colorama.init(autoreset=True)
 
-links = []
-
 def renderer(textin):
+    links = []
     for text in textin:
         # print(getBoolEach('#', text))
         colors = getColor(text)
@@ -44,6 +43,9 @@ def renderer(textin):
         
         
         checkEnd(text)
+
+def returnLink(text):
+    return getLink(text)
 
 def getTags(text):
     return re.findall('<(.*?)>', text)

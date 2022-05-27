@@ -6,7 +6,7 @@
 <Fore.RED>hello there 
 
 <link="https://www.github.com/democraz20/pymarkup">github page/repository
-<link="https://www.github.com/democraz20">personal github profile
+<link="pymku:text/secondpage.txt">second page
 
 line with : <noEnd>
 <Fore.BLUE>more colors 

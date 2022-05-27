@@ -1,0 +1,15 @@
+<#="">second page
+<Fore.YELLOW>=================[pyMarkup]====================
+this is the content of the second page
+demonstrating navigation mechanics
+might change file extensions later
+.txt seems a little boring 
+as you can see the file name and path
+can be anything the user/writer wants 
+aslong as that file exists, ofcourse
+in the future i might handle requests with 
+this as when visiting a web, downloading
+all of it's content just to navigate maybe isnt so
+<Fore.GREEN>Optimized
+<Fore.YELLOW>===============================================
+<link="pymku:text.txt">Front page
