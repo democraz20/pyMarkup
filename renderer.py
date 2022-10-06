@@ -7,7 +7,6 @@ colorama.init(autoreset=True)
 def renderer(textin):
     links = []
     for text in textin:
-        # print(getBoolEach('#', text))
         colors = getColor(text)
         header = getBoolEach("#", text)
         noEnd = getBoolEach("noEnd", text)
@@ -21,8 +20,6 @@ def renderer(textin):
             print(f"{Fore.CYAN}link : {Fore.GREEN}[{Fore.WHITE}{len(links)-1}{Fore.GREEN}] {Fore.WHITE}", end="")
         if not figfont:
             figfont = "standard"
-        # print(colors)
-        # print(text)
         sum = " ".join(pureText(text))
         if header:
             try:
@@ -54,24 +51,18 @@ def getTags(text):
 #def getEverything(text):
     #return re.findall('<(.*?)>(.*?)<(.*?)>', text)
 def pureText(text):
-    #string.filter(char => char !== '<' && char !== '>')
-    # print(text)
     marker = "§"
     text = text.replace('<', marker)
     text = text.replace('>', ' ')
     text = text.split(" ")
     for i in range(2):
-        # print(f"{Fore.YELLOW} {len(text)}")
         if text[0].find(marker) != -1:
             text.pop(0)
-    #elif len(text) == 1: pass;
     if len(text) > 1:
         if text[-2].find(marker) != -1:
             text.pop(-2)
     text[-1] = text[-1].replace("\n", "")
-    #print(text)
     return text
-    #return re.findall('>(.*?)<', text)
 
 def getBoolEach(item, text):
     allTags = getTags(text)
@@ -82,7 +73,6 @@ def getBoolEach(item, text):
 
 def checkEnd(text):
     allTags = getTags(text)
-    # print(allTags)
     if len(allTags) >= 1:
         if allTags[-1] == "noEnd":
             print(end="")
